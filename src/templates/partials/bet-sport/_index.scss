@@ -1,0 +1,121 @@
+.bet-sport {
+  margin-bottom: 1px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__category {
+    @include flex($align-items: center);
+    @include size(100%, 35px);
+
+    position: relative;
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    padding: 0 11px 0 15px;
+    font-size: 13px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s;
+      z-index: 0;
+      width: 5px;
+      content: '';
+    }
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+
+      .bet-sport {
+
+        &__favourite {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__text {
+    flex-grow: 1;
+    padding-right: 30px;
+    color: var(--color-white);
+  }
+
+  &__arrow {
+    transition: 0.3s;
+  }
+
+  &__favourite {
+    @include size(14px);
+
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    color: #ddd;
+
+    svg {
+      display: block;
+    }
+
+    &:hover,
+    &--active {
+      color: #f1cb62;
+    }
+
+    &--active {
+      display: block!important;
+    }
+
+
+  }
+
+  &__dropdown {
+    display: none;
+  }
+
+  @each $status, $color in $sport-color {
+
+    &--#{$status} {
+
+      .bet-sport {
+
+        &__category {
+
+          &::before {
+            background: linear-gradient(0deg, rgba(56, 58, 74, 0.3), rgba(56, 58, 74, 0.3)), linear-gradient(90deg, #{$color} 0%, #{$color} 100%);
+          }
+        }
+      }
+    }
+  }
+
+  &--active {
+
+    .bet-sport {
+
+      &__category {
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &__arrow {
+        transform: rotateZ(-180deg);
+      }
+
+      &__dropdown {
+        display: block;
+      }
+    }
+  }
+}

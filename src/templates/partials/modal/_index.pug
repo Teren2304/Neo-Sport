@@ -1,0 +1,37 @@
+mixin modal-login
+  .modal&attributes(attributes)
+    .modal__wrapper
+      .modal__container
+        .container
+          .modal__icon.js-modal-icon
+            i.fa.fa-times
+          h5.h5 Login
+          .modal__block
+            +field(type="text" placeholder="login *")
+          .modal__block
+            +field(type="email" placeholder="email *")
+          .modal__block
+            +button('Login').button--primary
+
+mixin modal-registration
+  .modal&attributes(attributes)
+    .modal__wrapper
+      .modal__container
+        .container
+          .modal__icon.js-modal-icon
+            i.fa.fa-times
+          h5.h5 Registration
+          .modal__block
+            p Fields marked with an asterisk (*) are required.
+          .modal__block
+            +field(type="text" placeholder="name *")
+          .modal__block
+            +field(type="text" placeholder="username *")
+          .modal__block
+            +field(type="text" placeholder="password *")
+          .modal__block
+            +field(type="text" placeholder="verified password *")
+          .modal__block
+            +field(type="email" placeholder="email *")
+          .modal__block
+            +button('Register').button--primary

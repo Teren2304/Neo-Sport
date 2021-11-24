@@ -1,0 +1,14 @@
+.bet-button {
+  @include size(100%, 35px);
+  @include flex($align-items: center);
+
+  transition: 0.3s;
+  margin-bottom: 1px;
+  background-color: var(--color-secondary);
+  padding: 0 15px;
+
+  &__text {
+    color: var(--color-white);
+    font-size: 12px;
+  }
+}

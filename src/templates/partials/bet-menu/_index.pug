@@ -1,0 +1,37 @@
+mixin bet-menu
+  .bet-menu&attributes(attributes)
+    .bet-menu__wrapper
+      .bet-menu__icon.js-bet-menu-icon
+        i.fa.fa-times
+      +bet-search
+      +bet-button('Favourites (0)')
+      +bet-button('Hidden Matches (0)')
+      .bet-menu__block
+        +bet-sport('American Football').bet-sport--american_football
+        +bet-sport('Bandy').bet-sport--bandy
+        +bet-sport('Baseball').bet-sport--baseball
+        +bet-sport('Basketball').bet-sport--basketball
+        +bet-sport('Beach Volleyball').bet-sport--beach_volleyball
+        +bet-sport('Bowls').bet-sport--bowls
+        +bet-sport('Boxing/UFC').bet-sport--boxing
+        +bet-sport('Cricket').bet-sport--cricket
+        +bet-sport('Cycling').bet-sport--cycling
+        +bet-sport('Darts').bet-sport--darts
+        +bet-sport('E-sports').bet-sport--e-sports
+        +bet-sport('Floorball').bet-sport--floorball
+        +bet-sport('Formula 1').bet-sport--formula_1
+        +bet-sport('Futsal').bet-sport--futsal
+        +bet-sport('Golf').bet-sport--golf
+        +bet-sport('Handball').bet-sport--handball
+        +bet-sport('Ice Hockey').bet-sport--ice_hockey
+        +bet-sport('Motorbikes').bet-sport--motorbikes
+        +bet-sport('Pool').bet-sport--pool
+        +bet-sport('Rugby League').bet-sport--rugby_league
+        +bet-sport('Snooker').bet-sport--snooker
+        +bet-sport('Soccer').bet-sport--soccer
+        +bet-sport('Speedway').bet-sport--speedway
+        +bet-sport('Table Tennis').bet-sport--table_tennis
+        +bet-sport('Tennis').bet-sport--tennis
+        +bet-sport('Volleyball').bet-sport--volleyball
+        +bet-sport('Water Polo').bet-sport--water_polo
+

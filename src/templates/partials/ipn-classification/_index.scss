@@ -1,0 +1,184 @@
+.ipn-classification {
+  background-color: var(--color-content);
+  width: 100%;
+
+  &__header,
+  &__item {
+    display: grid;
+  }
+
+  &__wrapper {
+    margin-bottom: 1px;
+
+    &--open {
+
+      .ipn-classification {
+
+        &__arrow {
+          transform: rotateZ(0);
+        }
+
+        &__body {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__category {
+    @include size(100%, 40px);
+    @include flex($align-items: center);
+
+    margin-bottom: 1px;
+    background-color: var(--color-secondary);
+    padding: 0 10px;
+    color: var(--color-white);
+  }
+
+  &__header {
+    @include size(100%, 35px);
+
+    grid-template-columns: 30px 1fr;
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    padding-right: 10px;
+    color: var(--color-white);
+    font-size: 12px;
+
+    .ipn-classification {
+
+      &__cell {
+
+        &:first-child {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: none;
+  }
+
+  &__country {
+    @include size(22px, 14px);
+
+    margin-right: 5px;
+
+    img {
+      @include size(100%);
+
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 30px 15% 1fr 20% 20%;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+    min-height: 35px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__cell {
+    @include flex(center, center, row, wrap);
+
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    text-align: left;
+  }
+
+  &__tr {
+    @include flex(center, center);
+
+    width: 100%;
+  }
+
+  &__th {
+    width: 15px;
+    text-align: center;
+
+    &--active {
+      font-weight: var(--typography-medium);
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+    color: #b5b7c6;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &--active {
+      color: #f00;
+    }
+  }
+
+  &__arrow {
+    @include size(12px);
+
+    transform: rotateZ(-180deg);
+    transition: 0.3s;
+    margin-right: 0;
+    margin-left: auto;
+
+    svg {
+      @include size(100%);
+
+      display: block;
+    }
+  }
+
+  &__favourite {
+    cursor: pointer;
+
+    &:hover,
+    &--active {
+      color: #f1cb62;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__team {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @each $status, $color in $sport-color {
+
+    &--#{$status} {
+
+      .ipn-classification {
+
+        &__header,
+        &__category {
+          background: linear-gradient(0deg, rgba(56, 58, 74, 0.3), rgba(56, 58, 74, 0.3)), linear-gradient(90deg, #{$color} 0%, #{$color} 100%);
+        }
+      }
+    }
+  }
+}

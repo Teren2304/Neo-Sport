@@ -1,21 +1,49 @@
-include ../mixins/all
-include ../data/all
+include ../components/index
+include ../sections/index
+include ../partials/index
 
 doctype html
 html
   head
     include _head
-
   body
-    block header
-      include ../components/_header
+    .pattern
+      +top
+      +nav
+      +header#header
+      block content
+      +footer#footer
+      +modal-login#modal-login
+      +modal-registration#modal-registration
+    .settings
+      .settings__item(data-color="azure" style="background: #21cdc0").js-settings-item
+      .settings__item(data-color="yellow" style="background: #f2c300").js-settings-item
+      .settings__item(data-color="dark" style="background: #151f28").js-settings-item
+      .settings__item(data-color="wide").js-settings-item
+        i.fas.fa-arrows-alt-h
 
-    block content
+    style.
+      .settings {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: #fff;
+        z-index: 9;
+      }
 
-    block footer
-      include ../components/_footer
-      //include ../components/_cookies-policy
-      include ../components/_mobile-navigation
+      .settings__item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin: 10px 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
 
-    block scripts
-        include ../partials/_scripts
+    script(src="./js/custom.js")

@@ -1,0 +1,77 @@
+mixin ipn-classification
+  .ipn-classification&attributes(attributes)
+    .ipn-classification__wrapper.ipn-classification__wrapper--open.js-ipn-classification-wrapper
+      .ipn-classification__category Soccer
+      .ipn-classification__header.js-ipn-classification-wrapper-header
+        +ipn-classification-header('England: Premier league')
+
+      .ipn-classification__body
+        - var n = 0;
+        while n < 9
+          +ipn-classification-item(data=n++)
+
+    .ipn-classification__wrapper.ipn-classification__wrapper--open.js-ipn-classification-wrapper
+      .ipn-classification__header.js-ipn-classification-wrapper-header
+        +ipn-classification-header('ENGLAND Championship')
+
+      .ipn-classification__body
+        - var n = 0;
+        while n < 22
+          +ipn-classification-item(data=n++)
+
+
+mixin ipn-classification-header(name)
+  .ipn-classification__cell
+    .ipn-classification__favourite
+      svg(width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M7 11.0404L2.67376 13.3148L3.5 8.49745L0 5.0858L4.83688 4.38296L7 0L9.16312 4.38296L14 5.0858L10.5 8.49745L11.3262 13.3148L7 11.0404Z' fill='currentColor')
+  .ipn-classification__cell
+    .ipn-classification__country
+      img(src="http://134.209.246.114/BET_MOBILE_NEW/img/icon-country/ua.png")
+    p.ipn-classification__text= name
+    i.ipn-classification__arrow
+      svg(width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M9 1L5 5L1 1' stroke='white')
+
+mixin ipn-classification-item
+  .ipn-classification__item
+    .ipn-classification__cell
+      .ipn-classification__favourite
+        svg(width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M7 11.0404L2.67376 13.3148L3.5 8.49745L0 5.0858L4.83688 4.38296L7 0L9.16312 4.38296L14 5.0858L10.5 8.49745L11.3262 13.3148L7 11.0404Z' fill='currentColor')
+
+    .ipn-classification__cell
+      p.ipn-classification__text 20:00
+
+    .ipn-classification__cell
+      .ipn-classification__block
+        p.ipn-classification__team Liverpool Long Nickname Long Nickname
+      .ipn-classification__block
+        p.ipn-classification__team Manchester City
+
+    .ipn-classification__cell
+      .ipn-classification__tr
+        .ipn-classification__th.ipn-classification__th--active 1
+        .ipn-classification__th 2
+        .ipn-classification__th -
+        .ipn-classification__th -
+        .ipn-classification__th -
+      .ipn-classification__tr
+        .ipn-classification__th 5
+        .ipn-classification__th.ipn-classification__th--active 3
+        .ipn-classification__th -
+        .ipn-classification__th -
+        .ipn-classification__th -
+
+    .ipn-classification__cell
+      a.ipn-classification__icon
+        svg(width='15' height='11' viewBox='0 0 15 11' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M2 0C0.895431 0 0 0.895431 0 2V9C0 10.1046 0.89543 11 2 11H13C14.1046 11 15 10.1046 15 9V2C15 0.895431 14.1046 0 13 0H2ZM10.1613 5.27083L5.80645 3.20833V7.33333L10.1613 5.27083Z' fill='currentColor')
+      a.ipn-classification__icon
+        svg(width='17' height='12' viewBox='0 0 17 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M8.5 0.5V3.5' stroke='currentColor' stroke-linecap='square')
+          path(d='M8.5 8C9.60457 8 10.5 7.10457 10.5 6C10.5 4.89543 9.60457 4 8.5 4C7.39543 4 6.5 4.89543 6.5 6C6.5 7.10457 7.39543 8 8.5 8Z' stroke='currentColor')
+          rect(x='0.5' y='0.5' width='16' height='11' stroke='currentColor')
+          rect(x='0.5' y='3.5' width='3' height='5' stroke='currentColor')
+          rect(x='13.5' y='3.5' width='3' height='5' stroke='currentColor')
+          path(d='M8.5 8.5V11.5' stroke='currentColor' stroke-linecap='square')

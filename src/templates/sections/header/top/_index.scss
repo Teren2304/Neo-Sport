@@ -1,0 +1,86 @@
+.top {
+  @include flex($align-items: center);
+
+  position: relative;
+  transition: 0.3s;
+  background-color: var(--color-secondary);
+  padding: 10px 0;
+  height: 48px;
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    height: auto;
+  }
+
+  [class^='container'] {
+    height: 100%;
+  }
+
+  .search {
+    @include media-max(map_get($grid-breakpoints, lg)) {
+      display: none;
+    }
+  }
+
+  &__wrapper,
+  &__block {
+    height: 100%;
+  }
+
+  &__wrapper {
+    @include flex(space-between, center);
+  }
+
+  &__block {
+    @include flex($align-items: center);
+
+    position: relative;
+
+    &--lg {
+      flex-grow: 1;
+      margin-right: 20px;
+
+      @include media-max(map_get($grid-breakpoints, lg)) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &--sm {
+      @include media-max(map_get($grid-breakpoints, lg)) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    margin-right: 30px;
+    text-transform: uppercase;
+    color: var(--color-white);
+
+    &--active,
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include media-max(map_get($grid-breakpoints, lg)) {
+      margin-right: 10px;
+    }
+  }
+
+  &--search {
+    height: 98px;
+
+    .search {
+      z-index: 2;
+
+      &__block {
+        height: 100%;
+      }
+    }
+  }
+}

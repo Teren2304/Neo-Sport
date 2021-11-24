@@ -1,0 +1,47 @@
+// Sports color
+$sport-color: (
+  'american_football': #629D5B,
+  'bandy': #4ED7FF,
+  'baseball': #FF8E00,
+  'basketball': #FF845C,
+  'beach_volleyball': #FFAF3F,
+  'bowls': #6488A7,
+  'boxing': #FF1515,
+  'cricket': #D86308,
+  'cycling': #79B35C,
+  'darts': #ED4830,
+  'e-sports': #C364C5,
+  'floorball': #985970,
+  'formula_1': #578986,
+  'futsal': #CABB76,
+  'golf': #70C448,
+  'handball': #D37831,
+  'ice_hockey': #00B6EC,
+  'motorbikes': #BADBAD,
+  'pool': #B0D437,
+  'rugby_league': #D79A7E,
+  'snooker': #E5191A,
+  'soccer': #30A01A,
+  'speedway': #37B0D4,
+  'table_tennis': #5E9FDE,
+  'tennis': #E1E31C,
+  'volleyball': #FFAF3D,
+  'water_polo': #A6CAF0
+);
+
+@import './post/index';
+@import './post-banner/index';
+@import './post-video/index';
+@import './schedule/index';
+@import './table/index';
+@import './banner/index';
+@import './social/index';
+@import './modal/index';
+
+@import './bet-search/index';
+@import './bet-button/index';
+@import './bet-menu/index';
+@import './bet-nav/index';
+@import './bet-sport/index';
+@import './bet-league/index';
+@import './ipn-classification/index';

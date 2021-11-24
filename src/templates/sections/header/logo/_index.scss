@@ -1,0 +1,6 @@
+.logo {
+  @include size(200px, 75px);
+
+  display: block;
+  position: relative;
+}

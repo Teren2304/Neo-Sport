@@ -1,0 +1,16 @@
+mixin post-banner(height)
+  .post-banner&attributes(attributes)
+    .post-banner__top
+      a.post-banner__link
+        img(src="https://ld-wp73.template-help.com/wordpress/prod_18248/v1/wp-content/uploads/2018/03/thumb-sport-"+ Math.floor(Math.random() * (20 - 1) + 1) +".jpg" height=height + 'px').post-banner__img
+      .post-banner__content
+        .post-banner__block
+          h3.h3.margin.padding.post-banner__title.post-banner__title--primary
+            a(href="#") As More Japanese Take up Bodybuilding, a Veteran Chases a Championship
+        .post-banner__block
+          p.post-banner__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus commodi cumque, distinctio dolores eum facere illum impedit incidunt itaque laudantium minima necessitatibus quia quisquam rerum sapiente, sed similique veritatis voluptatibus.q
+        .post-banner__block
+          +button('read more').button--primary
+    .post-banner__bottom
+      h3.h3.margin.post-banner__title
+        a(href="#") As More Japanese Take up Bodybuilding, a Veteran Chases a Championship

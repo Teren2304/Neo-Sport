@@ -1,0 +1,60 @@
+.search {
+  @include flex(flex-end, center);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  z-index: 0;
+
+  &__icon,
+  &__svg {
+    @include size(24px);
+
+    svg {
+      @include size(100%);
+
+      display: block;
+    }
+  }
+
+  &__icon {
+    margin-left: 10px;
+    fill: var(--color-white);
+
+    &:hover,
+    &--active {
+      fill: var(--color-primary);
+    }
+  }
+
+  &__block {
+    position: relative;
+    flex-grow: 1;
+    transition: 0.3s;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  &__filed {
+    @include size(100%);
+
+    border: 0;
+    padding-right: 50px;
+    padding-left: 20px;
+    font-size: 30px;
+    font-weight: 500;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,10 +1,79 @@
 :root {
-  --font-family: #{$regular-fonts-list};
-  --light: #{$fw-light};
-  --regular: #{$fw-base};
-  --bold: #{$fw-bold};
-  --extra-bold: #{$fw-headings};
-  --font-size: #{rem($fs-base)};
-  --line-height: #{$lh-base};
-  --headings-line-height: #{$lh-headings};
+  --font-size: 14px;
+  --font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-family-alt: 'Roboto Condensed', 'Helvetica', 'Arial', sans-serif;
+  --line-height: 1.7;
+  --typography-slim: 300;
+  --typography-regular: 400;
+  --typography-medium: 500;
+  --typography-bold: 700;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  color: var(--color-title);
+  font-family: var(--font-family-alt);
+  font-weight: var(--typography-medium);
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+}
+
+h4,
+.h4 {
+  font-size: 16px;
+}
+
+h5,
+.h5 {
+  font-size: 14px;
+}
+
+h6,
+.h6 {
+  font-size: 12px;
+}
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 23px;
+  margin-bottom: 11.5px;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 9.2px;
+  margin-bottom: 9.2px;
 }

@@ -1,0 +1,24 @@
+---
+title: Portfolio
+lang: en
+---
+extends layouts/_layout
+
+block content
+  main
+    section.section
+      .container-fluid
+        .container
+          .content
+            .content__column.content__column--xs
+              aside.aside
+                +bet-menu.js-bet-menu
+            .content__column.content__column--wide.content__column--center
+              +ipn-classification.js-ipn-classification
+
+            .content__column.content__column--xs
+              aside.aside
+                .banner
+                  a(href="#").banner__link
+                    img(src="https://ld-wp73.template-help.com/wordpress/prod_18248/v1/wp-content/uploads/2018/03/thumb-sport-2.jpg" height="510").banner__img
+          +bet-nav

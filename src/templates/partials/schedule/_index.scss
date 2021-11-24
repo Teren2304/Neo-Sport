@@ -1,0 +1,223 @@
+.schedule {
+  background-color: var(--color-content);
+  font-family: var(--font-family-alt);
+
+  .row {
+    position: relative;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__time,
+  &__vs {
+    width: 100%;
+    background-color: #101419;
+    background-image: linear-gradient(90deg, #101419 0%, #ed563b);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-family: var(--font-family);
+    font-weight: var(--typography-bold);
+    font-style: italic;
+  }
+
+  &__head {
+    @include size(100%,  48px);
+
+    position: relative;
+    background: linear-gradient(45deg, #0c1217 40%, var(--color-secondary) 70%, var(--color-primary) 100%);
+    padding: 0 15px;
+    color: var(--color-white);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      background-image: url('https://neospor.joomlatema.net/templates/neospor/images/stripes.png');
+      content: '';
+    }
+  }
+
+  &__body {
+    border: 1px solid var(--color-border);
+    padding: 30px 10px;
+
+    .row {
+      align-items: flex-start;
+    }
+  }
+
+  &__block {
+    @include flex(center, center, row, wrap);
+
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  &__logo {
+    @include size(100%, 200px);
+    @include flex(center, center);
+
+    background: url('https://neospor.joomlatema.net/templates/neospor/images/drop-shadow.png') no-repeat bottom center;
+    padding-bottom: 28px;
+    overflow: hidden;
+
+    @include media-max(map_get($grid-breakpoints, sm)) {
+      height: 100px;
+    }
+  }
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__name {
+    color: var(--color-title);
+    font-size: 20px;
+  }
+
+  &__vs {
+    font-size: 24px;
+  }
+
+  &__time {
+    margin-top: 40px;
+    line-height: 1;
+    font-size: 48px;
+
+    @include media-max(map_get($grid-breakpoints, sm)) {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    max-width: 120px;
+  }
+
+  &__date {
+    @include flex($align-items: center);
+
+    height: 100%;
+
+    p {
+      text-transform: uppercase;
+      line-height: 1;
+      font-size: 15px;
+      font-weight: var(--typography-bold);
+    }
+
+    h4 {
+      margin: 0 5px 0 0;
+      color: var(--color-white);
+      font-size: 36px;
+      font-weight: var(--typography-bold);
+    }
+  }
+
+  &__next-match {
+    @include flex(center, center, column);
+
+    height: 100%;
+    text-transform: uppercase;
+
+    * {
+      line-height: 1.2;
+      color: var(--color-white);
+    }
+  }
+
+  &__presented {
+    @include flex($align-items: center);
+
+    text-transform: uppercase;
+
+    p {
+      margin-right: 5px;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    h6 {
+      margin: 0;
+      font-size: 12px;
+      font-weight: var(--typography-bold);
+    }
+  }
+
+  &__label {
+    margin: 0;
+    color: #fdc52c;
+    font-size: 18px;
+    font-weight: var(--typography-bold);
+    font-style: italic;
+  }
+
+  &--sm {
+    line-height: 1.3;
+
+    .schedule {
+
+      &__label,
+      &__name {
+        font-size: 16px;
+      }
+
+      &__head {
+        padding: 0 8px;
+      }
+
+      &__body {
+        padding: 20px 5px;
+      }
+
+      &__next-match {
+        align-items: flex-end;
+      }
+
+      &__logo {
+        height: 90px;
+      }
+
+      &__time {
+        margin-top: 20px;
+        font-size: 24px;
+      }
+
+      &__date {
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      &__button {
+        margin-top: 20px;
+      }
+
+      &__presented {
+        flex-direction: column;
+        align-items: flex-end;
+
+        * {
+          font-size: 11px;
+        }
+
+        p {
+          margin-right: 0;
+          white-space: initial;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+mixin footer
+  footer.footer&attributes(attributes)
+    .container-fluid.footer__top
+      .container
+        .row
+          .col-12.col-lg-4
+            .footer__block
+              +logo
+            .footer__block
+              p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utalip.
+            .footer__block
+              i.fa.fa-phone.footer__icon
+              span Phone: +1 800 9123 456 78
+            .footer__block
+              i.fa.fa-map-marker.footer__icon
+              span Address: 4127 Lady Bug Drive street, Colorado Springs,CO, 8903
+            .footer__block
+              i.fa.fa-envelope.footer__icon
+              span Email:
+              a(href="#").footer__href example@mail.com
+            .footer__block
+              +social
+
+          .col-12.col-lg-4
+            h3.footer__subtitle NeoSpor
+              span Products
+            ul.footer__list
+              li.footer__item
+                a(href="#").footer__link Neofans Membership
+              li.footer__item
+                a(href="#").footer__link Neospor TV+
+              li.footer__item
+                a(href="#").footer__link Online store
+              li.footer__item
+                a(href="#").footer__link Helpdesk
+              li.footer__item
+                a(href="#").footer__link FAQs
+          .col-12.col-lg-4
+            h3.footer__subtitle Flickr
+              span Photos
+            .row
+              - var n = 1
+              while n < 10
+                .col-3.col-sm-2.col-lg-3
+                  a(href="#" data=n++).footer__preview
+                    img(src="https://ld-wp73.template-help.com/wordpress/prod_18248/v1/wp-content/uploads/2018/03/thumb-sport-" + Math.floor(Math.random() * (20 - 1) + 1) + ".jpg").footer__img
+
+          .col-12.col-lg-4
+            h3.footer__subtitle News
+              span Letter
+            .footer__block
+              +field(type="email" placeholder="email")
+            .footer__block
+              +button('Send').button--primary
+
+
+    .container-fluid.footer__bottom
+      .container
+        .row
+          .col-12.col-md-6
+            span Copyright © 2021
+            a(href="#").footer__href Neospor
+            span ©. All rights reserved.
+          .col-12.col-md-6
+            ul.footer__menu
+              li.footer__item
+                a(href="#").footer__nav Home
+              li.footer__item
+                a(href="#").footer__nav About
+              li.footer__item
+                a(href="#").footer__nav Videos
+              li.footer__item
+                a(href="#").footer__nav Blog
+              li.footer__item
+                a(href="#").footer__nav Contact

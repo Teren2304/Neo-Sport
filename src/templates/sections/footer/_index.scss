@@ -1,0 +1,122 @@
+.footer {
+  line-height: 1.7;
+  color: var(--color-white);
+
+  &__top {
+    background-color: var(--color-secondary);
+    padding: 40px 0;
+  }
+
+  &__bottom {
+    background-color: var(--color-black);
+    padding: 20px 0;
+  }
+
+  &__subtitle {
+    color: var(--color-white);
+
+    span {
+      margin-left: 5px;
+      color: var(--color-primary);
+    }
+  }
+
+  &__menu {
+    @include flex(flex-end, center);
+
+    @include media-max(map_get($grid-breakpoints, sm)) {
+      margin-top: 10px;
+    }
+  }
+
+  &__nav {
+    display: block;
+    padding-left: 30px;
+    color: var(--color-white);
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover,
+    &--active {
+      color: var(--color-primary);
+    }
+
+    @include media-max(map_get($grid-breakpoints, sm)) {
+      padding-left: 15px;
+    }
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
+
+  &__link {
+    @include size(100%, 36px);
+    @include flex($align-items: center);
+
+    position: relative;
+    color: var(--color-white);
+
+    &::after,
+    &::before {
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 1px;
+      content: '';
+    }
+
+    &::after {
+      bottom: 1px;
+      opacity: 0.1;
+      background-color: #06090e;
+    }
+
+    &::before {
+      bottom: 0;
+      background-color: #142132;
+    }
+
+    &:hover,
+    &--active {
+      color: var(--color-primary);
+    }
+  }
+
+  &__icon {
+    float: left;
+    margin-right: 8px;
+    line-height: 1.7;
+  }
+
+  &__block {
+    margin-bottom: 10px;
+  }
+
+  &__href {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: var(--color-primary);
+  }
+
+  &__preview {
+    @include size(75px, 60px);
+
+    display: block;
+    flex-shrink: 0;
+    margin: 4px 0;
+
+    @include media-max(map_get($grid-breakpoints, sm)) {
+      width: auto;
+    }
+  }
+
+  &__img {
+    @include size(100%);
+
+    display: block;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,42 @@
+.bet-search {
+  @include size(100%, 35px);
+  @include flex($align-items: center);
+
+  position: relative;
+  margin-bottom: 1px;
+
+  &__field {
+    @include size(100%);
+
+    border: 0;
+    border-radius: 0;
+    background-color: var(--color-secondary);
+    padding-right: 10px;
+    padding-left: 35px;
+    color: var(--color-white);
+
+    &::placeholder {
+      color: var(--color-white);
+    }
+
+    &:focus {
+      outline-color: var(--color-primary);
+    }
+  }
+
+  &__svg {
+    @include size(15px);
+
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: var(--color-white);
+
+    svg {
+      @include size(100%);
+
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+mixin submenu
+  ul.submenu&attributes(attributes)
+    li.submenu__item
+      a(href="#").submenu__link
+        span.submenu__label Video Playlist
+    li.submenu__item
+      a(href="#").submenu__link
+        span.submenu__label Text Ticker
+    li.submenu__item
+      a(href="#").submenu__link
+        span.submenu__label Post Layouts 1
+        i.fas.fa-caret-right.submenu__icon
+
+      ul.submenu
+        li.submenu__item
+          a(href="#").submenu__link
+            span.submenu__label Text 1
+        li.submenu__item
+          a(href="#").submenu__link
+            span.submenu__label Text 2
+        li.submenu__item
+          a(href="#").submenu__link
+            span.submenu__label Text 3
+
+    li.submenu__item
+      a(href="#").submenu__link
+        span.submenu__label Post Layouts 2
+        i.fas.fa-caret-right.submenu__icon
+
+      ul.submenu
+        li.submenu__item
+          a(href="#").submenu__link
+            span.submenu__label Text 4
+        li.submenu__item
+          a(href="#").submenu__link
+            span.submenu__label Text 5
+            i.fas.fa-caret-right.submenu__icon
+
+          ul.submenu
+            li.submenu__item
+              a(href="#").submenu__link
+                span.submenu__label Text 1
+            li.submenu__item
+              a(href="#").submenu__link
+                span.submenu__label Text 2
+            li.submenu__item
+              a(href="#").submenu__link
+                span.submenu__label Text 3

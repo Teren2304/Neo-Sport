@@ -1,0 +1,53 @@
+mixin schedule(size)
+  .schedule&attributes(attributes)
+    .schedule__head
+      .row.margin
+        div(class=size === 'lg' ? 'col-6 col-sm-4 padding' : 'col-6 col-lg-6 padding')
+          .schedule__date
+            h4.h4 23
+            p
+              | saturday
+              br
+              | october
+
+        div(class=size === 'lg' ? 'col-6 col-sm-4 padding' : 'col-6 col-lg-6 padding')
+          .schedule__next-match
+            .schedule__label Next match
+            .schedule__presented
+              p presented by |
+              h6.h6 neosport
+    .schedule__body
+      .row.margin
+        .col-4.padding
+          .schedule__logo
+            img(src="https://neospor.joomlatema.net/images/sampledata/team-logos/arsenal-logo.png").schedule__img
+            .schedule__shadow
+          .schedule__block
+            p.schedule__name Neospor FC
+        .col-4.padding
+          .schedule__block
+            p.schedule__time 21:25
+            p.schedule__vs vs
+
+          if size === 'lg'
+            .schedule__block
+              p.schedule__text Brighton City No:5 , Brighton
+            .schedule__block
+              p.schedule__text 6 November 2021 21:25
+
+        .col-4.padding
+          .schedule__logo
+            img(src="https://neospor.joomlatema.net/images/sampledata/team-logos/arsenal-logo.png").schedule__img
+            .schedule__shadow
+          .schedule__block
+            p.schedule__name Soccer Club
+
+      .row.margin
+        .col-12
+          if size === 'sm'
+            .schedule__block
+              p.schedule__text Brighton City No:5 , Brighton
+            .schedule__block
+              p.schedule__text 6 November 2021 21:25
+
+          +button('see schedule').button--primary.schedule__button

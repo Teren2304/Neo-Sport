@@ -5,44 +5,92 @@
 }
 
 body {
+  --color-primary: #ed563b;
+  --color-secondary: #232d39;
+  --color-background: #ed563b;
+  --color-content: #fff;
+  --color-content-alt: #f3f2f2;
+  --color-text: #666;
+  --color-title: #0d1527;
+  --content-width: var(--max-width);
+  --content-margin: 40px;
+
   @include smooth-font;
 
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  background-color: var(--white);
-  min-width: 320px;
+  background-color: var(--color-background);
+  min-width: var(--min-width);
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: var(--line-height);
-  color: var(--black);
+  color: var(--color-text);
   font-family: var(--font-family);
-  font-weight: var(--regular);
-  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-size: var(--font-size);
+  font-weight: var(--typography-regular);
 
-  &.is-overflow-hidden { // stylelint-disable-line
-    overflow: hidden;
+  &.azure {
+    --color-primary: #21cdc0;
+    --color-secondary: #213360;
+    --color-background: #21cdc0;
+    --color-content: #fff;
+    --color-content-alt: #f3f2f2;
+    --color-text: #666;
+    --color-title: #0d1527;
+  }
+
+  &.yellow {
+    --color-primary: #f2c300;
+    --color-secondary: #2b6490;
+    --color-background: #f2c300;
+    --color-content: #fff;
+    --color-content-alt: #f3f2f2;
+    --color-text: #666;
+    --color-title: #0d1527;
+  }
+
+  &.wide {
+    --content-width: 100%;
+    --content-margin: 0;
+
+    .nav {
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  &.dark {
+    --color-content: #151f28;
+    --color-content-alt: #1a252f;
+    --color-title: #fff;
+    --color-text: #fff;
+    --color-border: #253443;
+    --font-family: 'Raleway', sans-serif;
+
+    .footer {
+
+      &__top {
+        background-color: #171717;
+      }
+    }
+
+    .section {
+
+      &--image {
+
+        &::before {
+          background-color: rgba(0, 0, 0, 0.88);
+        }
+      }
+    }
   }
 }
 
-//
-// Headings
-//
-
-@include make-all-type($tag-types);
-
-@for $i from 1 through 6 {
-
-  h#{$i},
-  .h#{$i} {
-    @include make-spacer(m, 0);
-
-    font-weight: var(--extra-bold);
-  }
+.margin {
+  margin: 0 !important;
 }
 
-p {
-  @include make-spacer(m, 0);
+.padding {
+  padding: 0 !important;
 }
 
 button {
@@ -50,11 +98,266 @@ button {
 }
 
 a {
-  text-decoration: underline;
-  color: var(--accent);
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 ul,
 ol {
   @include reset-list;
 }
+
+.picture,
+.img {
+  @include size(100%);
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pattern {
+  margin: var(--content-margin) auto 0;
+  background-color: var(--color-content-alt);
+  max-width: var(--content-width);
+
+  @include media-max(map_get($grid-breakpoints, sm)) {
+    margin-top: 0;
+  }
+}
+
+[class^='col-'] {
+
+  &.padding-vertical {
+    padding-top: $grid-padding;
+    padding-bottom: $grid-padding;
+  }
+}
+
+.content {
+  @include flex;
+
+  padding-bottom: 30px;
+
+  &__column {
+
+    &--wide {
+      flex-grow: 1;
+      padding-right: 30px;
+
+      @include media-max(map_get($grid-breakpoints, lg)) {
+        padding-right: 0;
+      }
+    }
+
+    &--xs {
+      flex-shrink: 0;
+      width: 220px;
+
+      @include media-max(map_get($grid-breakpoints, lg)) {
+        width: 100%;
+      }
+    }
+
+    &--center {
+      @include media-min(map_get($grid-breakpoints, lg)) {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    flex-wrap: wrap;
+  }
+}
+
+.aside {
+  position: sticky;
+  top: 30px;
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    position: relative;
+  }
+}
+
+.section {
+  position: relative;
+  padding: 30px 0;
+
+  &--content {
+    background-color: var(--color-content);
+  }
+
+  &--image {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.88);
+      content: '';
+    }
+  }
+}
+
+.module {
+  background-color: var(--color-content);
+  padding: 20px 15px 15px;
+
+  &__title {
+
+    * {
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  &--border {
+    border: 1px solid var(--color-border);
+  }
+}
+
+
+.slider {
+
+  .slick-arrow {
+    @include flex(center, center);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    z-index: 3;
+    font-size: 0;
+
+    &::after {
+      color: var(--color-white);
+      font-family: 'Font Awesome 5 Free';
+      font-size: 20px;
+      font-weight: 900;
+    }
+  }
+
+  .slick-next {
+
+    &::after {
+      content: '\f105';
+    }
+  }
+
+  .slick-prev {
+
+    &::after {
+      content: '\f104';
+    }
+  }
+
+  .slick-list,
+  .slick-track {
+    height: 100%;
+  }
+
+  .slick-slide {
+
+    > div {
+      height: 100%;
+    }
+  }
+
+  &--schedule,
+  &--default {
+
+    .slick-dots {
+      @include flex(center, center);
+
+      position: absolute;
+      right: 0;
+
+      li {
+        padding: 0;
+      }
+
+      button {
+        background-color: var(--color-secondary);
+        font-size: 0;
+      }
+
+      .slick-active button {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &--default {
+
+    .slick-arrow {
+      @include size(30px);
+
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+      background-color: var(--color-primary);
+    }
+
+    .slick-next {
+      right: 0;
+      transform: translate(100%, -50%);
+
+      @include media-max(map_get($grid-breakpoints, xl)) {
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    }
+
+    .slick-prev {
+      left: 0;
+      transform: translate(-100%, -50%);
+
+      @include media-max(map_get($grid-breakpoints, xl)) {
+        left: 10px;
+        transform: translateY(-50%);
+      }
+    }
+
+    .slick-dots {
+      top: -20px;
+
+      li {
+        margin: 2px;
+      }
+
+      button {
+        @include size(10px);
+      }
+    }
+  }
+
+  &--schedule {
+    padding-bottom: 50px;
+
+    .slick-dots {;
+      top: auto;
+      bottom: 0;
+      left: 0;
+
+      li {
+        margin: 5px;
+      }
+
+      button {
+        @include size(50px, 6px);
+      }
+    }
+  }
+}
+

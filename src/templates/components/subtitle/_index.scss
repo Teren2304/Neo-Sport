@@ -1,0 +1,10 @@
+.subtitle {
+  @include flex($align-items: center);
+
+  margin-bottom: 20px;
+
+  &__text {
+    line-height: 1.4;
+    font-weight: var(--typography-regular);
+  }
+}

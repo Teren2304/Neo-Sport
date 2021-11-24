@@ -1,0 +1,44 @@
+.bet-nav {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 2px 8px 0 rgba(65, 68, 75, 0.3);
+  background-color: var(--color-secondary);
+  height: 65px;
+
+  &__wrapper {
+    @include size(100%);
+    @include flex($align-items: center);
+
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &__link {
+    @include flex(center, center);
+
+    flex: 1;
+    min-width: 90px;
+    color: var(--color-white);
+    font-size: 14px;
+  }
+
+  &__icon {
+    @include size(20px);
+
+    margin-right: 5px;
+
+    svg {
+      @include size(100%);
+
+      display: block;
+    }
+  }
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    display: block;
+  }
+}

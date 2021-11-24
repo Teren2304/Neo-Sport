@@ -1,0 +1,18 @@
+.toggle {
+  @include size(35px);
+
+  display: none;
+  border-radius: 3px;
+  background-color: var(--color-primary);
+
+  &__item {
+    @include size(14px, 2px);
+
+    margin: 2px 0;
+    background-color: var(--color-white);
+  }
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    @include flex(center, center, column);
+  }
+}

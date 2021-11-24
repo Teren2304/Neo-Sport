@@ -1,0 +1,16 @@
+mixin bet-sport(text)
+  .bet-sport.js-bet-sport&attributes(attributes)
+    .bet-sport__category.js-bet-sport-category
+      i.bet-sport__icon
+      span.bet-sport__text= text
+      i.bet-sport__arrow
+        svg(width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M9 1L5 5L1 1' stroke='white')
+      a.bet-sport__favourite.js-bet-sport-favourite
+        svg(width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(fill-rule='evenodd' clip-rule='evenodd' d='M7 11.0404L2.67376 13.3148L3.5 8.49745L0 5.0858L4.83688 4.38296L7 0L9.16312 4.38296L14 5.0858L10.5 8.49745L11.3262 13.3148L7 11.0404Z' fill='currentColor')
+    .bet-sport__dropdown
+      +bet-league('Spain')
+      +bet-league('FA Cup')
+      +bet-league('Premier League')
+      +bet-league('French League')

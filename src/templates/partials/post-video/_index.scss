@@ -1,0 +1,134 @@
+.post-video {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-content);
+
+  &__top {
+    position: relative;
+
+    &:hover {
+
+      .post-video {
+
+        &__img {
+          transform: scale(1.2);
+        }
+
+        &__overlay {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 15px;
+  }
+
+  &__overlay {
+    @include flex(center, center);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__block {
+    @include flex($align-items: center);
+
+    margin-bottom: 7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    color: #666;
+  }
+
+  &__title {
+
+    a {
+      @include line-clamp(1);
+    }
+
+    &:hover {
+
+      a {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__text {
+    @include line-clamp(3);
+
+    font-size: 12px;
+  }
+
+  &__link {
+    @include size(100%);
+
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    transition: 0.3s;
+    width: 100%;
+    object-position: center;
+  }
+
+  &__node {
+    @include size(56px);
+
+    border-radius: 50%;
+    background-image: url('https://neospor.joomlatema.net/templates/neospor/images/play-btn.png');
+    background-size: cover;
+  }
+
+  &__rate {
+    @include flex($align-items: center);
+
+    padding-top: 5px;
+
+    i {
+      margin-right: 2px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    &--1 {
+
+      i {
+
+        &:nth-child(-n + 1) {color: var(--color-primary);} } }
+
+    &--2 {
+
+      i {
+
+        &:nth-child(-n + 2) {color: var(--color-primary);} } }
+
+    &--3 {
+
+      i {
+
+        &:nth-child(-n + 3) {color: var(--color-primary);} } }
+
+    &--4 {
+
+      i {
+
+        &:nth-child(-n + 4) {color: var(--color-primary);} } }
+
+    &--5 {
+
+      i {
+
+        &:nth-child(-n + 5) {color: var(--color-primary);} } }
+  }
+}

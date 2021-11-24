@@ -1,23 +1,164 @@
 ---
-title: enestech | IT-holding
+title: Portfolio
 lang: en
-hasLink: false
-isHeaderTransparent: true
 ---
 extends layouts/_layout
 
 block content
   main
-    include sections/_hero-section
-    include sections/_worldwide
-    include sections/_arenas
-    include sections/_tops
-    include sections/_offer
+    section.section.section--content
+      .container-fluid
+        .container
+          .row
+            .col-12.col-lg-7.padding-vertical
+              .slider.slider--schedule.js-schedule-slider
+                div
+                  +schedule('lg')
+                div
+                  +schedule('lg')
+                div
+                  +schedule('lg')
+            .col-12.col-lg-5.padding-vertical
+              .module.module--border
+                .module__title
+                  +subtitle('Point Table')
+                .module__body
+                  +table
 
-    hr.u-section-hr.u-hidden-sm.u-mt-16.u-mb-48.u-my-64-md
 
-    include sections/_membership
+    section.section.section--image(style="background-image: url('https://neospor.joomlatema.net/templates/neospor/images/topsl-bg.jpg')")
+      .container-fluid
+        .container
+          +subtitle('Featured News')
+          .slider.slider--default.js-default-slider
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(250, 'lg', true, data=n++)
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(250, 'lg', true, data=n++)
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(250, 'lg', true, data=n++)
 
-    hr.u-section-hr.u-hidden-sm.u-my-48-sm.u-my-64-md
 
-    include sections/_contact-us
+    section.section.section--content
+      .container-fluid
+        .container
+          .row
+            .col-12.col-lg-4.padding-vertical
+              h1.h1.margin We Are proud To Present Our Team
+            .col-12.col-lg-8.padding-vertical
+              p We always work with a professional team. Aliquam sodales justo sit amet urna auctor scelerisquinterdum leo anet tempus enim esent egetis hendrerit vel nibh vitae ornar sem velit aliquam facilisivitae finibus .
+
+
+    section.section.section--content
+      .container-fluid
+        .container
+          +subtitle('Our Top Services')
+          .slider.slider--default.js-default-slider
+            div
+              .row
+                - var n = 0
+                while n < 3
+                  .col-12.col-lg-4.padding-vertical
+                    +post-banner(220, data=n++)
+            div
+              .row
+                - var n = 0
+                while n < 3
+                  .col-12.col-lg-4.padding-vertical
+                    +post-banner(220, data=n++)
+
+
+    section.section.section--content
+      .container-fluid
+        .container
+          +subtitle('Featured Videos')
+          .row
+            .col-12
+              +button('More Video')(style="width: 130px; margin-right: 0; margin-left: auto").button--primary
+            - var n = 1
+            while n < 5
+              .col-12.col-lg-3.padding-vertical
+                +post-video(144, data=n++)
+
+
+    section.section
+      .container-fluid
+        .container
+          +subtitle('Matches & Fixture')
+          .slider.slider--default.js-default-slider
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-md-6.col-lg-3.padding-vertical
+                    +schedule('sm', data=n++).schedule--sm
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-md-6.col-lg-3.padding-vertical
+                    +schedule('sm', data=n++).schedule--sm
+
+
+    section.section.section--content
+      .container-fluid
+        .container
+          +subtitle('Upcoming Projects')
+          .slider.slider--default.js-default-slider
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(170, 'sm', false, data=n++).post--sm
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(170, 'sm', false, data=n++).post--sm
+
+    section.section
+      .container-fluid
+        .container
+          +subtitle('More From Neospor')
+          .slider.slider--default.js-default-slider
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(150, 'sm', true, data=n++).post--sm
+            div
+              .row
+                - var n = 0
+                while n < 4
+                  .col-12.col-lg-6.padding-vertical
+                    +post(150, 'sm', true, data=n++).post--sm
+
+
+    section.section
+      .container-fluid
+        .container
+          +subtitle('Photo Gallery')
+
+    section.section.section--content
+      .container-fluid
+        .container
+          .row
+            - var n = 0
+            while n < 6
+              .col-12.col-lg-2.padding-vertical
+                +banner(120, data=n++)(style="height: 120px")

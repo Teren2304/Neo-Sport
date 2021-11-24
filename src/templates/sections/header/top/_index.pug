@@ -1,0 +1,14 @@
+mixin top
+  .top&attributes(attributes)
+    .container-fluid
+      .container
+        .top__wrapper
+          .top__block.top__block--lg
+            a(href="#").top__link About neosport
+            a(href="#").top__link Neosport arena
+            a(href="#").top__link Community
+            a(href="#").top__link Fans
+            +search
+          .top__block.top__block--sm
+            a(data="#modal-login").top__link.js-top-link log in
+            a(data="#modal-registration").top__link.js-top-link register

@@ -1,0 +1,32 @@
+mixin table
+  table.table&attributes(attributes)
+    tr.table__tr
+      td(width="1%").table__td Pos.
+      td.table__td
+        .table__team Team
+      td(width="5%").table__td Pl
+      td(width="5%").table__td Pts
+      td(width="5%").table__td W
+      td(width="5%").table__td D
+      td(width="5%").table__td L
+
+    - var n = 1
+    while n < 6
+      tr.table__tr
+        td.table__td= n++ + "."
+        td.table__td
+          .table__team
+            img(src="https://neospor.joomlatema.net/images/sampledata/team-logos/arsenal-logo.png").table__logo
+            span Neospor FC
+        td.table__td 0
+        td.table__td 2
+        td.table__td 4
+        td.table__td 1
+        td.table__td 1
+
+    tr.table__tr
+      td.table__td.table__td--right(colspan="8")
+        a(href='#').table__link
+          i.fa.fa-chevron-right.table__icon
+          | Full Table
+

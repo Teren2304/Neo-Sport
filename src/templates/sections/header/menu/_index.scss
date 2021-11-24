@@ -1,0 +1,95 @@
+.menu {
+  @include flex;
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  &__item {
+    position: relative;
+    padding: 0 15px;
+    height: 100%;
+
+    @include media-max(map_get($grid-breakpoints, lg)) {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    &:hover,
+    &--active {
+
+      .menu {
+
+        &__link {
+          color: var(--color-primary);
+
+          &::before {
+            width: 100%;
+          }
+        }
+
+        &__dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include flex($align-items: center);
+
+    height: 100%;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &::before {
+      @include size(0, 3px);
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      transition: 0.3s;
+      background-color: var(--color-primary);
+      content: '';
+
+      @include media-max(map_get($grid-breakpoints, lg)) {
+        display: none;
+      }
+    }
+
+    @include media-max(map_get($grid-breakpoints, lg)) {
+      @include size(100%, 40px);
+
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon {
+    margin-left: 5px;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    transition: 0.3s;
+    z-index: 3;
+
+    @include media-max(map_get($grid-breakpoints, lg)) {
+      position: relative;
+    }
+  }
+
+  @include media-max(map_get($grid-breakpoints, lg)) {
+    @include size(100%, auto);
+
+    position: relative;
+    flex-direction: column;
+    transition: all 0.3s;
+    opacity: 0;
+    background-color: var(--color-content);
+    padding-top: 20px;
+  }
+}
